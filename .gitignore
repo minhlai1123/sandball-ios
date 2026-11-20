@@ -1,0 +1,26 @@
+# Xcode
+## User settings
+xcuserdata/
+*.xcuserstate
+project.xcworkspace/xcuserdata/
+*.xcuserdatad
+
+## Build generated
+build/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+
+## Clone & caches
+.build/
+.swiftpm/
+
+## OS generated
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db

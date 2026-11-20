@@ -1,0 +1,101 @@
+{
+  "levelId": 88,
+  "worldId": 9,
+  "title": "Galaxy Chute",
+  "quota": 72,
+  "totalInitialBalls": 100,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 46,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 54,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "portal_1",
+      "type": "portal_pair",
+      "x": 300.0,
+      "y": 1200.0,
+      "exitX": 700.0,
+      "exitY": 900.0,
+      "width": 80.0
+    },
+    {
+      "id": "portal_2",
+      "type": "portal_pair",
+      "x": 700.0,
+      "y": 1200.0,
+      "exitX": 300.0,
+      "exitY": 900.0,
+      "width": 80.0
+    },
+    {
+      "id": "gate_1",
+      "type": "multiplier_gate",
+      "x": 500.0,
+      "y": 700.0,
+      "width": 190.0,
+      "height": 36.0,
+      "multiplier": 3
+    },
+    {
+      "id": "bumper_1",
+      "type": "bouncy_bumper",
+      "x": 500.0,
+      "y": 500.0,
+      "width": 85.0,
+      "height": 85.0
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 72
+  }
+}

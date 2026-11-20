@@ -1,0 +1,107 @@
+{
+  "levelId": 27,
+  "worldId": 3,
+  "title": "Windmill Gate",
+  "quota": 25,
+  "totalInitialBalls": 45,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 25,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 8,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 500.0,
+      "y": 1083.3,
+      "count": 6,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 320.0,
+      "y": 816.7,
+      "count": 6,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "paddle_1",
+      "type": "rotating_paddle",
+      "x": 500.0,
+      "y": 1150.0,
+      "width": 260.0,
+      "height": 28.0,
+      "motorSpeed": 63.0
+    },
+    {
+      "id": "paddle_2",
+      "type": "rotating_paddle",
+      "x": 650.0,
+      "y": 750.0,
+      "width": 220.0,
+      "height": 26.0,
+      "motorSpeed": -40.0
+    },
+    {
+      "id": "gate_1",
+      "type": "multiplier_gate",
+      "x": 500.0,
+      "y": 550.0,
+      "width": 180.0,
+      "height": 34.0,
+      "multiplier": 2
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 25
+  }
+}

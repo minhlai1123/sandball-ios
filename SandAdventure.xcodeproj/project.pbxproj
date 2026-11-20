@@ -1,0 +1,923 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA00000002 /* SandAdventureApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000001 /* SandAdventureApp.swift */; };
+		AA00000004 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000003 /* ContentView.swift */; };
+		AA00000006 /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000005 /* MainMenuView.swift */; };
+		AA00000008 /* LevelSelectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000007 /* LevelSelectView.swift */; };
+		AA0000000A /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000009 /* GameView.swift */; };
+		AA0000000C /* GameHUDView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000B /* GameHUDView.swift */; };
+		AA0000000E /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000D /* SettingsView.swift */; };
+		AA00000010 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000000F /* GameScene.swift */; };
+		AA00000012 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000011 /* SceneManager.swift */; };
+		AA00000014 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000013 /* AudioManager.swift */; };
+		AA00000016 /* CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000015 /* CollisionCategories.swift */; };
+		AA00000018 /* SpatialGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000017 /* SpatialGrid.swift */; };
+		AA0000001A /* BallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000019 /* BallNode.swift */; };
+		AA0000001C /* SandTerrainNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000001B /* SandTerrainNode.swift */; };
+		AA0000001E /* CapsuleCarver.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000001D /* CapsuleCarver.swift */; };
+		AA00000020 /* LevelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0000001F /* LevelModel.swift */; };
+		AA00000022 /* LevelRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000021 /* LevelRepository.swift */; };
+		AA00000024 /* ProgressManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000023 /* ProgressManager.swift */; };
+		AA00000026 /* WorldTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000025 /* WorldTheme.swift */; };
+		AA00000028 /* LevelParsingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000027 /* LevelParsingTests.swift */; };
+		AA0000002A /* PhysicsFoundationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB00000029 /* PhysicsFoundationTests.swift */; };
+		AA0000002D /* level_1.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000002C /* level_1.json */; };
+		AA0000002F /* level_2.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000002E /* level_2.json */; };
+		AA00000031 /* level_3.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000030 /* level_3.json */; };
+		AA00000033 /* level_4.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000032 /* level_4.json */; };
+		AA00000035 /* level_5.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000034 /* level_5.json */; };
+		AA00000037 /* level_6.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000036 /* level_6.json */; };
+		AA00000039 /* level_7.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000038 /* level_7.json */; };
+		AA0000003B /* level_8.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000003A /* level_8.json */; };
+		AA0000003D /* level_9.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000003C /* level_9.json */; };
+		AA0000003F /* level_10.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000003E /* level_10.json */; };
+		AA00000041 /* level_11.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000040 /* level_11.json */; };
+		AA00000043 /* level_12.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000042 /* level_12.json */; };
+		AA00000045 /* level_13.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000044 /* level_13.json */; };
+		AA00000047 /* level_14.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000046 /* level_14.json */; };
+		AA00000049 /* level_15.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000048 /* level_15.json */; };
+		AA0000004B /* level_16.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000004A /* level_16.json */; };
+		AA0000004D /* level_17.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000004C /* level_17.json */; };
+		AA0000004F /* level_18.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000004E /* level_18.json */; };
+		AA00000051 /* level_19.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000050 /* level_19.json */; };
+		AA00000053 /* level_20.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000052 /* level_20.json */; };
+		AA00000055 /* level_21.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000054 /* level_21.json */; };
+		AA00000057 /* level_22.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000056 /* level_22.json */; };
+		AA00000059 /* level_23.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000058 /* level_23.json */; };
+		AA0000005B /* level_24.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000005A /* level_24.json */; };
+		AA0000005D /* level_25.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000005C /* level_25.json */; };
+		AA0000005F /* level_26.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000005E /* level_26.json */; };
+		AA00000061 /* level_27.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000060 /* level_27.json */; };
+		AA00000063 /* level_28.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000062 /* level_28.json */; };
+		AA00000065 /* level_29.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000064 /* level_29.json */; };
+		AA00000067 /* level_30.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000066 /* level_30.json */; };
+		AA00000069 /* level_31.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000068 /* level_31.json */; };
+		AA0000006B /* level_32.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000006A /* level_32.json */; };
+		AA0000006D /* level_33.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000006C /* level_33.json */; };
+		AA0000006F /* level_34.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000006E /* level_34.json */; };
+		AA00000071 /* level_35.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000070 /* level_35.json */; };
+		AA00000073 /* level_36.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000072 /* level_36.json */; };
+		AA00000075 /* level_37.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000074 /* level_37.json */; };
+		AA00000077 /* level_38.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000076 /* level_38.json */; };
+		AA00000079 /* level_39.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000078 /* level_39.json */; };
+		AA0000007B /* level_40.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000007A /* level_40.json */; };
+		AA0000007D /* level_41.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000007C /* level_41.json */; };
+		AA0000007F /* level_42.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000007E /* level_42.json */; };
+		AA00000081 /* level_43.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000080 /* level_43.json */; };
+		AA00000083 /* level_44.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000082 /* level_44.json */; };
+		AA00000085 /* level_45.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000084 /* level_45.json */; };
+		AA00000087 /* level_46.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000086 /* level_46.json */; };
+		AA00000089 /* level_47.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000088 /* level_47.json */; };
+		AA0000008B /* level_48.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000008A /* level_48.json */; };
+		AA0000008D /* level_49.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000008C /* level_49.json */; };
+		AA0000008F /* level_50.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000008E /* level_50.json */; };
+		AA00000091 /* level_51.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000090 /* level_51.json */; };
+		AA00000093 /* level_52.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000092 /* level_52.json */; };
+		AA00000095 /* level_53.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000094 /* level_53.json */; };
+		AA00000097 /* level_54.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000096 /* level_54.json */; };
+		AA00000099 /* level_55.json in Resources */ = {isa = PBXBuildFile; fileRef = BB00000098 /* level_55.json */; };
+		AA0000009B /* level_56.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000009A /* level_56.json */; };
+		AA0000009D /* level_57.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000009C /* level_57.json */; };
+		AA0000009F /* level_58.json in Resources */ = {isa = PBXBuildFile; fileRef = BB0000009E /* level_58.json */; };
+		AA000000A1 /* level_59.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000A0 /* level_59.json */; };
+		AA000000A3 /* level_60.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000A2 /* level_60.json */; };
+		AA000000A5 /* level_61.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000A4 /* level_61.json */; };
+		AA000000A7 /* level_62.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000A6 /* level_62.json */; };
+		AA000000A9 /* level_63.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000A8 /* level_63.json */; };
+		AA000000AB /* level_64.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000AA /* level_64.json */; };
+		AA000000AD /* level_65.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000AC /* level_65.json */; };
+		AA000000AF /* level_66.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000AE /* level_66.json */; };
+		AA000000B1 /* level_67.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000B0 /* level_67.json */; };
+		AA000000B3 /* level_68.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000B2 /* level_68.json */; };
+		AA000000B5 /* level_69.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000B4 /* level_69.json */; };
+		AA000000B7 /* level_70.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000B6 /* level_70.json */; };
+		AA000000B9 /* level_71.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000B8 /* level_71.json */; };
+		AA000000BB /* level_72.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000BA /* level_72.json */; };
+		AA000000BD /* level_73.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000BC /* level_73.json */; };
+		AA000000BF /* level_74.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000BE /* level_74.json */; };
+		AA000000C1 /* level_75.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000C0 /* level_75.json */; };
+		AA000000C3 /* level_76.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000C2 /* level_76.json */; };
+		AA000000C5 /* level_77.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000C4 /* level_77.json */; };
+		AA000000C7 /* level_78.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000C6 /* level_78.json */; };
+		AA000000C9 /* level_79.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000C8 /* level_79.json */; };
+		AA000000CB /* level_80.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000CA /* level_80.json */; };
+		AA000000CD /* level_81.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000CC /* level_81.json */; };
+		AA000000CF /* level_82.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000CE /* level_82.json */; };
+		AA000000D1 /* level_83.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000D0 /* level_83.json */; };
+		AA000000D3 /* level_84.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000D2 /* level_84.json */; };
+		AA000000D5 /* level_85.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000D4 /* level_85.json */; };
+		AA000000D7 /* level_86.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000D6 /* level_86.json */; };
+		AA000000D9 /* level_87.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000D8 /* level_87.json */; };
+		AA000000DB /* level_88.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000DA /* level_88.json */; };
+		AA000000DD /* level_89.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000DC /* level_89.json */; };
+		AA000000DF /* level_90.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000DE /* level_90.json */; };
+		AA000000E1 /* level_91.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000E0 /* level_91.json */; };
+		AA000000E3 /* level_92.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000E2 /* level_92.json */; };
+		AA000000E5 /* level_93.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000E4 /* level_93.json */; };
+		AA000000E7 /* level_94.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000E6 /* level_94.json */; };
+		AA000000E9 /* level_95.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000E8 /* level_95.json */; };
+		AA000000EB /* level_96.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000EA /* level_96.json */; };
+		AA000000ED /* level_97.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000EC /* level_97.json */; };
+		AA000000EF /* level_98.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000EE /* level_98.json */; };
+		AA000000F1 /* level_99.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000F0 /* level_99.json */; };
+		AA000000F3 /* level_100.json in Resources */ = {isa = PBXBuildFile; fileRef = BB000000F2 /* level_100.json */; };
+		AA000000F5 /* bgm_candy_world.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000F4 /* bgm_candy_world.wav */; };
+		AA000000F7 /* bgm_gameplay_kids.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000F6 /* bgm_gameplay_kids.wav */; };
+		AA000000F9 /* bgm_icecream_waltz.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000F8 /* bgm_icecream_waltz.wav */; };
+		AA000000FB /* bgm_jungle_fun.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000FA /* bgm_jungle_fun.wav */; };
+		AA000000FD /* bgm_menu_kids.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000FC /* bgm_menu_kids.wav */; };
+		AA000000FF /* bgm_victory_loop.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB000000FE /* bgm_victory_loop.wav */; };
+		AA00000101 /* sfx_ball_clack.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000100 /* sfx_ball_clack.wav */; };
+		AA00000103 /* sfx_ball_pop.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000102 /* sfx_ball_pop.wav */; };
+		AA00000105 /* sfx_boing.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000104 /* sfx_boing.wav */; };
+		AA00000107 /* sfx_btn_tap.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000106 /* sfx_btn_tap.wav */; };
+		AA00000109 /* sfx_cheer_kids.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000108 /* sfx_cheer_kids.wav */; };
+		AA0000010B /* sfx_dig_sand.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB0000010A /* sfx_dig_sand.wav */; };
+		AA0000010D /* sfx_multiplier.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB0000010C /* sfx_multiplier.wav */; };
+		AA0000010F /* sfx_portal.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB0000010E /* sfx_portal.wav */; };
+		AA00000111 /* sfx_star_twinkle.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000110 /* sfx_star_twinkle.wav */; };
+		AA00000113 /* sfx_tnt_boom.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000112 /* sfx_tnt_boom.wav */; };
+		AA00000115 /* sfx_truck_drop.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000114 /* sfx_truck_drop.wav */; };
+		AA00000117 /* sfx_truck_horn.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000116 /* sfx_truck_horn.wav */; };
+		AA00000119 /* sfx_victory_fanfare.wav in Resources */ = {isa = PBXBuildFile; fileRef = BB00000118 /* sfx_victory_fanfare.wav */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CC000001 /* SandAdventure.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SandAdventure.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC000002 /* SandAdventureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SandAdventureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB00000001 /* SandAdventureApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandAdventureApp.swift; sourceTree = "<group>"; };
+		BB00000003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		BB00000005 /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
+		BB00000007 /* LevelSelectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelSelectView.swift; sourceTree = "<group>"; };
+		BB00000009 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		BB0000000B /* GameHUDView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHUDView.swift; sourceTree = "<group>"; };
+		BB0000000D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		BB0000000F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		BB00000011 /* SceneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
+		BB00000013 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		BB00000015 /* CollisionCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollisionCategories.swift; sourceTree = "<group>"; };
+		BB00000017 /* SpatialGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialGrid.swift; sourceTree = "<group>"; };
+		BB00000019 /* BallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BallNode.swift; sourceTree = "<group>"; };
+		BB0000001B /* SandTerrainNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SandTerrainNode.swift; sourceTree = "<group>"; };
+		BB0000001D /* CapsuleCarver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapsuleCarver.swift; sourceTree = "<group>"; };
+		BB0000001F /* LevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelModel.swift; sourceTree = "<group>"; };
+		BB00000021 /* LevelRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelRepository.swift; sourceTree = "<group>"; };
+		BB00000023 /* ProgressManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressManager.swift; sourceTree = "<group>"; };
+		BB00000025 /* WorldTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldTheme.swift; sourceTree = "<group>"; };
+		BB00000027 /* LevelParsingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LevelParsingTests.swift; sourceTree = "<group>"; };
+		BB00000029 /* PhysicsFoundationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsFoundationTests.swift; sourceTree = "<group>"; };
+		BB0000002B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0000002C /* level_1.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_1.json; sourceTree = "<group>"; };
+		BB0000002E /* level_2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_2.json; sourceTree = "<group>"; };
+		BB00000030 /* level_3.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_3.json; sourceTree = "<group>"; };
+		BB00000032 /* level_4.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_4.json; sourceTree = "<group>"; };
+		BB00000034 /* level_5.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_5.json; sourceTree = "<group>"; };
+		BB00000036 /* level_6.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_6.json; sourceTree = "<group>"; };
+		BB00000038 /* level_7.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_7.json; sourceTree = "<group>"; };
+		BB0000003A /* level_8.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_8.json; sourceTree = "<group>"; };
+		BB0000003C /* level_9.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_9.json; sourceTree = "<group>"; };
+		BB0000003E /* level_10.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_10.json; sourceTree = "<group>"; };
+		BB00000040 /* level_11.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_11.json; sourceTree = "<group>"; };
+		BB00000042 /* level_12.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_12.json; sourceTree = "<group>"; };
+		BB00000044 /* level_13.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_13.json; sourceTree = "<group>"; };
+		BB00000046 /* level_14.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_14.json; sourceTree = "<group>"; };
+		BB00000048 /* level_15.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_15.json; sourceTree = "<group>"; };
+		BB0000004A /* level_16.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_16.json; sourceTree = "<group>"; };
+		BB0000004C /* level_17.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_17.json; sourceTree = "<group>"; };
+		BB0000004E /* level_18.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_18.json; sourceTree = "<group>"; };
+		BB00000050 /* level_19.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_19.json; sourceTree = "<group>"; };
+		BB00000052 /* level_20.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_20.json; sourceTree = "<group>"; };
+		BB00000054 /* level_21.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_21.json; sourceTree = "<group>"; };
+		BB00000056 /* level_22.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_22.json; sourceTree = "<group>"; };
+		BB00000058 /* level_23.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_23.json; sourceTree = "<group>"; };
+		BB0000005A /* level_24.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_24.json; sourceTree = "<group>"; };
+		BB0000005C /* level_25.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_25.json; sourceTree = "<group>"; };
+		BB0000005E /* level_26.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_26.json; sourceTree = "<group>"; };
+		BB00000060 /* level_27.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_27.json; sourceTree = "<group>"; };
+		BB00000062 /* level_28.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_28.json; sourceTree = "<group>"; };
+		BB00000064 /* level_29.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_29.json; sourceTree = "<group>"; };
+		BB00000066 /* level_30.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_30.json; sourceTree = "<group>"; };
+		BB00000068 /* level_31.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_31.json; sourceTree = "<group>"; };
+		BB0000006A /* level_32.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_32.json; sourceTree = "<group>"; };
+		BB0000006C /* level_33.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_33.json; sourceTree = "<group>"; };
+		BB0000006E /* level_34.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_34.json; sourceTree = "<group>"; };
+		BB00000070 /* level_35.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_35.json; sourceTree = "<group>"; };
+		BB00000072 /* level_36.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_36.json; sourceTree = "<group>"; };
+		BB00000074 /* level_37.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_37.json; sourceTree = "<group>"; };
+		BB00000076 /* level_38.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_38.json; sourceTree = "<group>"; };
+		BB00000078 /* level_39.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_39.json; sourceTree = "<group>"; };
+		BB0000007A /* level_40.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_40.json; sourceTree = "<group>"; };
+		BB0000007C /* level_41.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_41.json; sourceTree = "<group>"; };
+		BB0000007E /* level_42.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_42.json; sourceTree = "<group>"; };
+		BB00000080 /* level_43.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_43.json; sourceTree = "<group>"; };
+		BB00000082 /* level_44.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_44.json; sourceTree = "<group>"; };
+		BB00000084 /* level_45.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_45.json; sourceTree = "<group>"; };
+		BB00000086 /* level_46.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_46.json; sourceTree = "<group>"; };
+		BB00000088 /* level_47.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_47.json; sourceTree = "<group>"; };
+		BB0000008A /* level_48.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_48.json; sourceTree = "<group>"; };
+		BB0000008C /* level_49.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_49.json; sourceTree = "<group>"; };
+		BB0000008E /* level_50.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_50.json; sourceTree = "<group>"; };
+		BB00000090 /* level_51.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_51.json; sourceTree = "<group>"; };
+		BB00000092 /* level_52.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_52.json; sourceTree = "<group>"; };
+		BB00000094 /* level_53.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_53.json; sourceTree = "<group>"; };
+		BB00000096 /* level_54.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_54.json; sourceTree = "<group>"; };
+		BB00000098 /* level_55.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_55.json; sourceTree = "<group>"; };
+		BB0000009A /* level_56.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_56.json; sourceTree = "<group>"; };
+		BB0000009C /* level_57.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_57.json; sourceTree = "<group>"; };
+		BB0000009E /* level_58.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_58.json; sourceTree = "<group>"; };
+		BB000000A0 /* level_59.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_59.json; sourceTree = "<group>"; };
+		BB000000A2 /* level_60.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_60.json; sourceTree = "<group>"; };
+		BB000000A4 /* level_61.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_61.json; sourceTree = "<group>"; };
+		BB000000A6 /* level_62.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_62.json; sourceTree = "<group>"; };
+		BB000000A8 /* level_63.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_63.json; sourceTree = "<group>"; };
+		BB000000AA /* level_64.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_64.json; sourceTree = "<group>"; };
+		BB000000AC /* level_65.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_65.json; sourceTree = "<group>"; };
+		BB000000AE /* level_66.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_66.json; sourceTree = "<group>"; };
+		BB000000B0 /* level_67.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_67.json; sourceTree = "<group>"; };
+		BB000000B2 /* level_68.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_68.json; sourceTree = "<group>"; };
+		BB000000B4 /* level_69.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_69.json; sourceTree = "<group>"; };
+		BB000000B6 /* level_70.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_70.json; sourceTree = "<group>"; };
+		BB000000B8 /* level_71.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_71.json; sourceTree = "<group>"; };
+		BB000000BA /* level_72.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_72.json; sourceTree = "<group>"; };
+		BB000000BC /* level_73.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_73.json; sourceTree = "<group>"; };
+		BB000000BE /* level_74.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_74.json; sourceTree = "<group>"; };
+		BB000000C0 /* level_75.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_75.json; sourceTree = "<group>"; };
+		BB000000C2 /* level_76.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_76.json; sourceTree = "<group>"; };
+		BB000000C4 /* level_77.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_77.json; sourceTree = "<group>"; };
+		BB000000C6 /* level_78.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_78.json; sourceTree = "<group>"; };
+		BB000000C8 /* level_79.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_79.json; sourceTree = "<group>"; };
+		BB000000CA /* level_80.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_80.json; sourceTree = "<group>"; };
+		BB000000CC /* level_81.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_81.json; sourceTree = "<group>"; };
+		BB000000CE /* level_82.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_82.json; sourceTree = "<group>"; };
+		BB000000D0 /* level_83.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_83.json; sourceTree = "<group>"; };
+		BB000000D2 /* level_84.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_84.json; sourceTree = "<group>"; };
+		BB000000D4 /* level_85.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_85.json; sourceTree = "<group>"; };
+		BB000000D6 /* level_86.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_86.json; sourceTree = "<group>"; };
+		BB000000D8 /* level_87.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_87.json; sourceTree = "<group>"; };
+		BB000000DA /* level_88.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_88.json; sourceTree = "<group>"; };
+		BB000000DC /* level_89.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_89.json; sourceTree = "<group>"; };
+		BB000000DE /* level_90.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_90.json; sourceTree = "<group>"; };
+		BB000000E0 /* level_91.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_91.json; sourceTree = "<group>"; };
+		BB000000E2 /* level_92.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_92.json; sourceTree = "<group>"; };
+		BB000000E4 /* level_93.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_93.json; sourceTree = "<group>"; };
+		BB000000E6 /* level_94.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_94.json; sourceTree = "<group>"; };
+		BB000000E8 /* level_95.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_95.json; sourceTree = "<group>"; };
+		BB000000EA /* level_96.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_96.json; sourceTree = "<group>"; };
+		BB000000EC /* level_97.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_97.json; sourceTree = "<group>"; };
+		BB000000EE /* level_98.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_98.json; sourceTree = "<group>"; };
+		BB000000F0 /* level_99.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_99.json; sourceTree = "<group>"; };
+		BB000000F2 /* level_100.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = level_100.json; sourceTree = "<group>"; };
+		BB000000F4 /* bgm_candy_world.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_candy_world.wav; sourceTree = "<group>"; };
+		BB000000F6 /* bgm_gameplay_kids.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_gameplay_kids.wav; sourceTree = "<group>"; };
+		BB000000F8 /* bgm_icecream_waltz.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_icecream_waltz.wav; sourceTree = "<group>"; };
+		BB000000FA /* bgm_jungle_fun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_jungle_fun.wav; sourceTree = "<group>"; };
+		BB000000FC /* bgm_menu_kids.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_menu_kids.wav; sourceTree = "<group>"; };
+		BB000000FE /* bgm_victory_loop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = bgm_victory_loop.wav; sourceTree = "<group>"; };
+		BB00000100 /* sfx_ball_clack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_ball_clack.wav; sourceTree = "<group>"; };
+		BB00000102 /* sfx_ball_pop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_ball_pop.wav; sourceTree = "<group>"; };
+		BB00000104 /* sfx_boing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_boing.wav; sourceTree = "<group>"; };
+		BB00000106 /* sfx_btn_tap.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_btn_tap.wav; sourceTree = "<group>"; };
+		BB00000108 /* sfx_cheer_kids.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_cheer_kids.wav; sourceTree = "<group>"; };
+		BB0000010A /* sfx_dig_sand.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_dig_sand.wav; sourceTree = "<group>"; };
+		BB0000010C /* sfx_multiplier.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_multiplier.wav; sourceTree = "<group>"; };
+		BB0000010E /* sfx_portal.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_portal.wav; sourceTree = "<group>"; };
+		BB00000110 /* sfx_star_twinkle.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_star_twinkle.wav; sourceTree = "<group>"; };
+		BB00000112 /* sfx_tnt_boom.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_tnt_boom.wav; sourceTree = "<group>"; };
+		BB00000114 /* sfx_truck_drop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_truck_drop.wav; sourceTree = "<group>"; };
+		BB00000116 /* sfx_truck_horn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_truck_horn.wav; sourceTree = "<group>"; };
+		BB00000118 /* sfx_victory_fanfare.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = sfx_victory_fanfare.wav; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD000002 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EE000001 = {
+			isa = PBXGroup;
+			children = (
+				EE000002 /* SandAdventure */,
+				EE000009 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		EE000002 /* SandAdventure */ = {
+			isa = PBXGroup;
+			children = (
+				EE000003 /* App */,
+				EE000004 /* UI */,
+				EE000005 /* Gameplay */,
+				EE000006 /* Physics */,
+				EE000007 /* Terrain */,
+				EE000008 /* Data */,
+				EE000010 /* Resources */,
+				EE000011 /* Tests */,
+			);
+			path = SandAdventure;
+			sourceTree = "<group>";
+		};
+		EE000003 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB00000001 /* SandAdventureApp.swift */,
+				BB00000003 /* ContentView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		EE000004 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BB00000005 /* MainMenuView.swift */,
+				BB00000007 /* LevelSelectView.swift */,
+				BB00000009 /* GameView.swift */,
+				BB0000000B /* GameHUDView.swift */,
+				BB0000000D /* SettingsView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		EE000005 /* Gameplay */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000000F /* GameScene.swift */,
+				BB00000011 /* SceneManager.swift */,
+				BB00000013 /* AudioManager.swift */,
+			);
+			path = Gameplay;
+			sourceTree = "<group>";
+		};
+		EE000006 /* Physics */ = {
+			isa = PBXGroup;
+			children = (
+				BB00000015 /* CollisionCategories.swift */,
+				BB00000017 /* SpatialGrid.swift */,
+				BB00000019 /* BallNode.swift */,
+			);
+			path = Physics;
+			sourceTree = "<group>";
+		};
+		EE000007 /* Terrain */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000001B /* SandTerrainNode.swift */,
+				BB0000001D /* CapsuleCarver.swift */,
+			);
+			path = Terrain;
+			sourceTree = "<group>";
+		};
+		EE000008 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000001F /* LevelModel.swift */,
+				BB00000021 /* LevelRepository.swift */,
+				BB00000023 /* ProgressManager.swift */,
+				BB00000025 /* WorldTheme.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EE000010 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000002B /* Info.plist */,
+				EE000012 /* Levels */,
+				EE000013 /* Audio */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE000012 /* Levels */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000002C /* level_1.json */,
+				BB0000002E /* level_2.json */,
+				BB00000030 /* level_3.json */,
+				BB00000032 /* level_4.json */,
+				BB00000034 /* level_5.json */,
+				BB00000036 /* level_6.json */,
+				BB00000038 /* level_7.json */,
+				BB0000003A /* level_8.json */,
+				BB0000003C /* level_9.json */,
+				BB0000003E /* level_10.json */,
+				BB00000040 /* level_11.json */,
+				BB00000042 /* level_12.json */,
+				BB00000044 /* level_13.json */,
+				BB00000046 /* level_14.json */,
+				BB00000048 /* level_15.json */,
+				BB0000004A /* level_16.json */,
+				BB0000004C /* level_17.json */,
+				BB0000004E /* level_18.json */,
+				BB00000050 /* level_19.json */,
+				BB00000052 /* level_20.json */,
+				BB00000054 /* level_21.json */,
+				BB00000056 /* level_22.json */,
+				BB00000058 /* level_23.json */,
+				BB0000005A /* level_24.json */,
+				BB0000005C /* level_25.json */,
+				BB0000005E /* level_26.json */,
+				BB00000060 /* level_27.json */,
+				BB00000062 /* level_28.json */,
+				BB00000064 /* level_29.json */,
+				BB00000066 /* level_30.json */,
+				BB00000068 /* level_31.json */,
+				BB0000006A /* level_32.json */,
+				BB0000006C /* level_33.json */,
+				BB0000006E /* level_34.json */,
+				BB00000070 /* level_35.json */,
+				BB00000072 /* level_36.json */,
+				BB00000074 /* level_37.json */,
+				BB00000076 /* level_38.json */,
+				BB00000078 /* level_39.json */,
+				BB0000007A /* level_40.json */,
+				BB0000007C /* level_41.json */,
+				BB0000007E /* level_42.json */,
+				BB00000080 /* level_43.json */,
+				BB00000082 /* level_44.json */,
+				BB00000084 /* level_45.json */,
+				BB00000086 /* level_46.json */,
+				BB00000088 /* level_47.json */,
+				BB0000008A /* level_48.json */,
+				BB0000008C /* level_49.json */,
+				BB0000008E /* level_50.json */,
+				BB00000090 /* level_51.json */,
+				BB00000092 /* level_52.json */,
+				BB00000094 /* level_53.json */,
+				BB00000096 /* level_54.json */,
+				BB00000098 /* level_55.json */,
+				BB0000009A /* level_56.json */,
+				BB0000009C /* level_57.json */,
+				BB0000009E /* level_58.json */,
+				BB000000A0 /* level_59.json */,
+				BB000000A2 /* level_60.json */,
+				BB000000A4 /* level_61.json */,
+				BB000000A6 /* level_62.json */,
+				BB000000A8 /* level_63.json */,
+				BB000000AA /* level_64.json */,
+				BB000000AC /* level_65.json */,
+				BB000000AE /* level_66.json */,
+				BB000000B0 /* level_67.json */,
+				BB000000B2 /* level_68.json */,
+				BB000000B4 /* level_69.json */,
+				BB000000B6 /* level_70.json */,
+				BB000000B8 /* level_71.json */,
+				BB000000BA /* level_72.json */,
+				BB000000BC /* level_73.json */,
+				BB000000BE /* level_74.json */,
+				BB000000C0 /* level_75.json */,
+				BB000000C2 /* level_76.json */,
+				BB000000C4 /* level_77.json */,
+				BB000000C6 /* level_78.json */,
+				BB000000C8 /* level_79.json */,
+				BB000000CA /* level_80.json */,
+				BB000000CC /* level_81.json */,
+				BB000000CE /* level_82.json */,
+				BB000000D0 /* level_83.json */,
+				BB000000D2 /* level_84.json */,
+				BB000000D4 /* level_85.json */,
+				BB000000D6 /* level_86.json */,
+				BB000000D8 /* level_87.json */,
+				BB000000DA /* level_88.json */,
+				BB000000DC /* level_89.json */,
+				BB000000DE /* level_90.json */,
+				BB000000E0 /* level_91.json */,
+				BB000000E2 /* level_92.json */,
+				BB000000E4 /* level_93.json */,
+				BB000000E6 /* level_94.json */,
+				BB000000E8 /* level_95.json */,
+				BB000000EA /* level_96.json */,
+				BB000000EC /* level_97.json */,
+				BB000000EE /* level_98.json */,
+				BB000000F0 /* level_99.json */,
+				BB000000F2 /* level_100.json */,
+			);
+			path = Levels;
+			sourceTree = "<group>";
+		};
+		EE000013 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+				BB000000F4 /* bgm_candy_world.wav */,
+				BB000000F6 /* bgm_gameplay_kids.wav */,
+				BB000000F8 /* bgm_icecream_waltz.wav */,
+				BB000000FA /* bgm_jungle_fun.wav */,
+				BB000000FC /* bgm_menu_kids.wav */,
+				BB000000FE /* bgm_victory_loop.wav */,
+				BB00000100 /* sfx_ball_clack.wav */,
+				BB00000102 /* sfx_ball_pop.wav */,
+				BB00000104 /* sfx_boing.wav */,
+				BB00000106 /* sfx_btn_tap.wav */,
+				BB00000108 /* sfx_cheer_kids.wav */,
+				BB0000010A /* sfx_dig_sand.wav */,
+				BB0000010C /* sfx_multiplier.wav */,
+				BB0000010E /* sfx_portal.wav */,
+				BB00000110 /* sfx_star_twinkle.wav */,
+				BB00000112 /* sfx_tnt_boom.wav */,
+				BB00000114 /* sfx_truck_drop.wav */,
+				BB00000116 /* sfx_truck_horn.wav */,
+				BB00000118 /* sfx_victory_fanfare.wav */,
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		EE000011 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BB00000027 /* LevelParsingTests.swift */,
+				BB00000029 /* PhysicsFoundationTests.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		EE000009 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CC000001 /* SandAdventure.app */,
+				CC000002 /* SandAdventureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FF000001 /* SandAdventure */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = GG000001 /* Build configuration list for PBXNativeTarget "SandAdventure" */;
+			buildPhases = (
+				HH000001 /* Sources */,
+				DD000001 /* Frameworks */,
+				JJ000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SandAdventure;
+			productName = SandAdventure;
+			productReference = CC000001 /* SandAdventure.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FF000002 /* SandAdventureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = GG000002 /* Build configuration list for PBXNativeTarget "SandAdventureTests" */;
+			buildPhases = (
+				HH000002 /* Sources */,
+				DD000002 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SandAdventureTests;
+			productName = SandAdventureTests;
+			productReference = CC000002 /* SandAdventureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		KK000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1530;
+			};
+			buildConfigurationList = GG000000 /* Build configuration list for PBXProject "SandAdventure" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EE000001;
+			productRefGroup = EE000009 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FF000001 /* SandAdventure */,
+				FF000002 /* SandAdventureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		JJ000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0000002D /* level_1.json in Resources */,
+				AA0000002F /* level_2.json in Resources */,
+				AA00000031 /* level_3.json in Resources */,
+				AA00000033 /* level_4.json in Resources */,
+				AA00000035 /* level_5.json in Resources */,
+				AA00000037 /* level_6.json in Resources */,
+				AA00000039 /* level_7.json in Resources */,
+				AA0000003B /* level_8.json in Resources */,
+				AA0000003D /* level_9.json in Resources */,
+				AA0000003F /* level_10.json in Resources */,
+				AA00000041 /* level_11.json in Resources */,
+				AA00000043 /* level_12.json in Resources */,
+				AA00000045 /* level_13.json in Resources */,
+				AA00000047 /* level_14.json in Resources */,
+				AA00000049 /* level_15.json in Resources */,
+				AA0000004B /* level_16.json in Resources */,
+				AA0000004D /* level_17.json in Resources */,
+				AA0000004F /* level_18.json in Resources */,
+				AA00000051 /* level_19.json in Resources */,
+				AA00000053 /* level_20.json in Resources */,
+				AA00000055 /* level_21.json in Resources */,
+				AA00000057 /* level_22.json in Resources */,
+				AA00000059 /* level_23.json in Resources */,
+				AA0000005B /* level_24.json in Resources */,
+				AA0000005D /* level_25.json in Resources */,
+				AA0000005F /* level_26.json in Resources */,
+				AA00000061 /* level_27.json in Resources */,
+				AA00000063 /* level_28.json in Resources */,
+				AA00000065 /* level_29.json in Resources */,
+				AA00000067 /* level_30.json in Resources */,
+				AA00000069 /* level_31.json in Resources */,
+				AA0000006B /* level_32.json in Resources */,
+				AA0000006D /* level_33.json in Resources */,
+				AA0000006F /* level_34.json in Resources */,
+				AA00000071 /* level_35.json in Resources */,
+				AA00000073 /* level_36.json in Resources */,
+				AA00000075 /* level_37.json in Resources */,
+				AA00000077 /* level_38.json in Resources */,
+				AA00000079 /* level_39.json in Resources */,
+				AA0000007B /* level_40.json in Resources */,
+				AA0000007D /* level_41.json in Resources */,
+				AA0000007F /* level_42.json in Resources */,
+				AA00000081 /* level_43.json in Resources */,
+				AA00000083 /* level_44.json in Resources */,
+				AA00000085 /* level_45.json in Resources */,
+				AA00000087 /* level_46.json in Resources */,
+				AA00000089 /* level_47.json in Resources */,
+				AA0000008B /* level_48.json in Resources */,
+				AA0000008D /* level_49.json in Resources */,
+				AA0000008F /* level_50.json in Resources */,
+				AA00000091 /* level_51.json in Resources */,
+				AA00000093 /* level_52.json in Resources */,
+				AA00000095 /* level_53.json in Resources */,
+				AA00000097 /* level_54.json in Resources */,
+				AA00000099 /* level_55.json in Resources */,
+				AA0000009B /* level_56.json in Resources */,
+				AA0000009D /* level_57.json in Resources */,
+				AA0000009F /* level_58.json in Resources */,
+				AA000000A1 /* level_59.json in Resources */,
+				AA000000A3 /* level_60.json in Resources */,
+				AA000000A5 /* level_61.json in Resources */,
+				AA000000A7 /* level_62.json in Resources */,
+				AA000000A9 /* level_63.json in Resources */,
+				AA000000AB /* level_64.json in Resources */,
+				AA000000AD /* level_65.json in Resources */,
+				AA000000AF /* level_66.json in Resources */,
+				AA000000B1 /* level_67.json in Resources */,
+				AA000000B3 /* level_68.json in Resources */,
+				AA000000B5 /* level_69.json in Resources */,
+				AA000000B7 /* level_70.json in Resources */,
+				AA000000B9 /* level_71.json in Resources */,
+				AA000000BB /* level_72.json in Resources */,
+				AA000000BD /* level_73.json in Resources */,
+				AA000000BF /* level_74.json in Resources */,
+				AA000000C1 /* level_75.json in Resources */,
+				AA000000C3 /* level_76.json in Resources */,
+				AA000000C5 /* level_77.json in Resources */,
+				AA000000C7 /* level_78.json in Resources */,
+				AA000000C9 /* level_79.json in Resources */,
+				AA000000CB /* level_80.json in Resources */,
+				AA000000CD /* level_81.json in Resources */,
+				AA000000CF /* level_82.json in Resources */,
+				AA000000D1 /* level_83.json in Resources */,
+				AA000000D3 /* level_84.json in Resources */,
+				AA000000D5 /* level_85.json in Resources */,
+				AA000000D7 /* level_86.json in Resources */,
+				AA000000D9 /* level_87.json in Resources */,
+				AA000000DB /* level_88.json in Resources */,
+				AA000000DD /* level_89.json in Resources */,
+				AA000000DF /* level_90.json in Resources */,
+				AA000000E1 /* level_91.json in Resources */,
+				AA000000E3 /* level_92.json in Resources */,
+				AA000000E5 /* level_93.json in Resources */,
+				AA000000E7 /* level_94.json in Resources */,
+				AA000000E9 /* level_95.json in Resources */,
+				AA000000EB /* level_96.json in Resources */,
+				AA000000ED /* level_97.json in Resources */,
+				AA000000EF /* level_98.json in Resources */,
+				AA000000F1 /* level_99.json in Resources */,
+				AA000000F3 /* level_100.json in Resources */,
+				AA000000F5 /* bgm_candy_world.wav in Resources */,
+				AA000000F7 /* bgm_gameplay_kids.wav in Resources */,
+				AA000000F9 /* bgm_icecream_waltz.wav in Resources */,
+				AA000000FB /* bgm_jungle_fun.wav in Resources */,
+				AA000000FD /* bgm_menu_kids.wav in Resources */,
+				AA000000FF /* bgm_victory_loop.wav in Resources */,
+				AA00000101 /* sfx_ball_clack.wav in Resources */,
+				AA00000103 /* sfx_ball_pop.wav in Resources */,
+				AA00000105 /* sfx_boing.wav in Resources */,
+				AA00000107 /* sfx_btn_tap.wav in Resources */,
+				AA00000109 /* sfx_cheer_kids.wav in Resources */,
+				AA0000010B /* sfx_dig_sand.wav in Resources */,
+				AA0000010D /* sfx_multiplier.wav in Resources */,
+				AA0000010F /* sfx_portal.wav in Resources */,
+				AA00000111 /* sfx_star_twinkle.wav in Resources */,
+				AA00000113 /* sfx_tnt_boom.wav in Resources */,
+				AA00000115 /* sfx_truck_drop.wav in Resources */,
+				AA00000117 /* sfx_truck_horn.wav in Resources */,
+				AA00000119 /* sfx_victory_fanfare.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		HH000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00000002 /* SandAdventureApp.swift in Sources */,
+				AA00000004 /* ContentView.swift in Sources */,
+				AA00000006 /* MainMenuView.swift in Sources */,
+				AA00000008 /* LevelSelectView.swift in Sources */,
+				AA0000000A /* GameView.swift in Sources */,
+				AA0000000C /* GameHUDView.swift in Sources */,
+				AA0000000E /* SettingsView.swift in Sources */,
+				AA00000010 /* GameScene.swift in Sources */,
+				AA00000012 /* SceneManager.swift in Sources */,
+				AA00000014 /* AudioManager.swift in Sources */,
+				AA00000016 /* CollisionCategories.swift in Sources */,
+				AA00000018 /* SpatialGrid.swift in Sources */,
+				AA0000001A /* BallNode.swift in Sources */,
+				AA0000001C /* SandTerrainNode.swift in Sources */,
+				AA0000001E /* CapsuleCarver.swift in Sources */,
+				AA00000020 /* LevelModel.swift in Sources */,
+				AA00000022 /* LevelRepository.swift in Sources */,
+				AA00000024 /* ProgressManager.swift in Sources */,
+				AA00000026 /* WorldTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		HH000002 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00000028 /* LevelParsingTests.swift in Sources */,
+				AA0000002A /* PhysicsFoundationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		LL000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Debug;
+		};
+		LL000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.10;
+			};
+			name = Release;
+		};
+		LL000003 /* Debug App */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SandAdventure/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antigravity.sandadventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		LL000004 /* Release App */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = SandAdventure/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.antigravity.sandadventure;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		LL000005 /* Debug Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antigravity.sandadventure.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SandAdventure.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SandAdventure";
+			};
+			name = Debug;
+		};
+		LL000006 /* Release Tests */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antigravity.sandadventure.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SandAdventure.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SandAdventure";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		GG000000 /* Build configuration list for PBXProject "SandAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				LL000001 /* Debug */,
+				LL000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		GG000001 /* Build configuration list for PBXNativeTarget "SandAdventure" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				LL000003 /* Debug App */,
+				LL000004 /* Release App */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		GG000002 /* Build configuration list for PBXNativeTarget "SandAdventureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				LL000005 /* Debug Tests */,
+				LL000006 /* Release Tests */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = KK000001 /* Project object */;
+}

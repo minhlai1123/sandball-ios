@@ -1,0 +1,115 @@
+{
+  "levelId": 97,
+  "worldId": 10,
+  "title": "Bumper Fiesta",
+  "quota": 80,
+  "totalInitialBalls": 108,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 49,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 30,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 680.0,
+      "y": 950.0,
+      "count": 29,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "paddle_1",
+      "type": "rotating_paddle",
+      "x": 500.0,
+      "y": 1250.0,
+      "width": 280.0,
+      "height": 30.0,
+      "motorSpeed": 50.0
+    },
+    {
+      "id": "portal_1",
+      "type": "portal_pair",
+      "x": 260.0,
+      "y": 1050.0,
+      "exitX": 740.0,
+      "exitY": 750.0,
+      "width": 80.0
+    },
+    {
+      "id": "tnt_1",
+      "type": "tnt_crate",
+      "x": 500.0,
+      "y": 900.0,
+      "width": 60.0
+    },
+    {
+      "id": "bumper_1",
+      "type": "bouncy_bumper",
+      "x": 320.0,
+      "y": 650.0,
+      "width": 85.0,
+      "height": 85.0
+    },
+    {
+      "id": "gate_1",
+      "type": "multiplier_gate",
+      "x": 680.0,
+      "y": 650.0,
+      "width": 160.0,
+      "height": 34.0,
+      "multiplier": 2
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 80
+  }
+}

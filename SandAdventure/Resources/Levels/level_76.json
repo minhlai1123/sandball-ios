@@ -1,0 +1,91 @@
+{
+  "levelId": 76,
+  "worldId": 8,
+  "title": "Dungeon Vault",
+  "quota": 61,
+  "totalInitialBalls": 89,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 43,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 46,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "portal_1",
+      "type": "portal_pair",
+      "x": 280.0,
+      "y": 1250.0,
+      "exitX": 720.0,
+      "exitY": 950.0,
+      "width": 80.0
+    },
+    {
+      "id": "portal_2",
+      "type": "portal_pair",
+      "x": 720.0,
+      "y": 750.0,
+      "exitX": 350.0,
+      "exitY": 520.0,
+      "width": 80.0
+    },
+    {
+      "id": "tnt_1",
+      "type": "tnt_crate",
+      "x": 500.0,
+      "y": 850.0,
+      "width": 60.0
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 61
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "levelId": 50,
+  "worldId": 5,
+  "title": "Rainbow Arch",
+  "quota": 41,
+  "totalInitialBalls": 66,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 34,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 12,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 500.0,
+      "y": 1083.3,
+      "count": 10,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 320.0,
+      "y": 816.7,
+      "count": 10,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "gate_1",
+      "type": "multiplier_gate",
+      "x": 500.0,
+      "y": 1200.0,
+      "width": 200.0,
+      "height": 36.0,
+      "multiplier": 3
+    },
+    {
+      "id": "ramp_1",
+      "type": "static_beam",
+      "x": 320.0,
+      "y": 900.0,
+      "width": 260.0,
+      "height": 28.0,
+      "rotationDegrees": 22.0
+    },
+    {
+      "id": "ramp_2",
+      "type": "static_beam",
+      "x": 680.0,
+      "y": 900.0,
+      "width": 260.0,
+      "height": 28.0,
+      "rotationDegrees": -22.0
+    },
+    {
+      "id": "gate_2",
+      "type": "multiplier_gate",
+      "x": 500.0,
+      "y": 650.0,
+      "width": 180.0,
+      "height": 36.0,
+      "multiplier": 2
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 41
+  }
+}

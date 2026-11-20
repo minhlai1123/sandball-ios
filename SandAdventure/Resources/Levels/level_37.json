@@ -1,0 +1,106 @@
+{
+  "levelId": 37,
+  "worldId": 4,
+  "title": "Ice Pinball",
+  "quota": 31,
+  "totalInitialBalls": 54,
+  "bounds": {
+    "width": 1000.0,
+    "height": 1800.0
+  },
+  "sandRegions": [
+    {
+      "x": 0.0,
+      "y": 260.0,
+      "width": 1000.0,
+      "height": 1490.0,
+      "carvable": true
+    }
+  ],
+  "ballSpawners": [
+    {
+      "x": 500.0,
+      "y": 1650.0,
+      "count": 29,
+      "type": "colored",
+      "spreadRadius": 105.0
+    },
+    {
+      "x": 320.0,
+      "y": 1350.0,
+      "count": 13,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    },
+    {
+      "x": 680.0,
+      "y": 950.0,
+      "count": 12,
+      "type": "dormant_white",
+      "spreadRadius": 72.0
+    }
+  ],
+  "obstacles": [
+    {
+      "id": "funnel_left",
+      "type": "funnel_bumper",
+      "x": 240.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": -25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "funnel_right",
+      "type": "funnel_bumper",
+      "x": 760.0,
+      "y": 260.0,
+      "width": 240.0,
+      "height": 38.0,
+      "rotationDegrees": 25.0,
+      "restitution": 0.35
+    },
+    {
+      "id": "bumper_1",
+      "type": "bouncy_bumper",
+      "x": 340.0,
+      "y": 1150.0,
+      "width": 85.0,
+      "height": 85.0
+    },
+    {
+      "id": "bumper_2",
+      "type": "bouncy_bumper",
+      "x": 660.0,
+      "y": 1050.0,
+      "width": 85.0,
+      "height": 85.0
+    },
+    {
+      "id": "bumper_3",
+      "type": "bouncy_bumper",
+      "x": 500.0,
+      "y": 750.0,
+      "width": 85.0,
+      "height": 85.0
+    },
+    {
+      "id": "portal_1",
+      "type": "portal_pair",
+      "x": 280.0,
+      "y": 950.0,
+      "exitX": 720.0,
+      "exitY": 550.0,
+      "width": 75.0
+    }
+  ],
+  "collectibles": [],
+  "truck": {
+    "x": 500.0,
+    "y": 120.0,
+    "width": 320.0,
+    "height": 150.0,
+    "quota": 31
+  }
+}
