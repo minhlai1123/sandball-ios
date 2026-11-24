@@ -1,4 +1,5 @@
 import SpriteKit
+import CoreGraphics
 
 public class GameScene: SKScene, SKPhysicsContactDelegate {
     public let levelRepo: LevelRepository
@@ -16,6 +17,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
 
     private let carver = CapsuleCarver(carveRadius: 52.0)
     private var sandTerrainNode: SandTerrainNode?
+    private var backgroundNode: SKSpriteNode?
     private var balls = [BallNode]()
     private var ballCounter = 1
 
@@ -46,12 +48,23 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         borderBody.restitution = 0.2
         self.physicsBody = borderBody
 
+        setupBackground()
         setupTerrain()
         loadLevel(levelId: currentLevelId)
     }
 
+    private func setupBackground() {
+        let bg = SKSpriteNode(color: SKColor(white: 0.96, alpha: 1.0), size: size)
+        bg.anchorPoint = .zero
+        bg.position = .zero
+        bg.zPosition = -10
+        backgroundNode = bg
+        addChild(bg)
+    }
+
     private func setupTerrain() {
         let terrain = SandTerrainNode(size: size)
+        terrain.zPosition = 0
         sandTerrainNode = terrain
         addChild(terrain)
 
@@ -64,15 +77,27 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         currentLevelId = levelId
         balls.removeAll()
         passedGates.removeAll()
-        children.filter { $0 is BallNode || $0.name == "truck" || $0.name == "obstacle" || $0.name == "portal" || $0.name == "tnt" || $0.name == "bumper" || $0.name == "gate" }.forEach { $0.removeFromParent() }
+        children.filter {
+            $0 is BallNode ||
+            $0.name == "truck" ||
+            $0.name == "obstacle" ||
+            $0.name == "portal" ||
+            $0.name == "tnt" ||
+            $0.name == "bumper" ||
+            $0.name == "gate" ||
+            $0.name == "confetti"
+        }.forEach { $0.removeFromParent() }
 
         let worldId = ((levelId - 1) / 10) + 1
         let theme = getWorldTheme(for: worldId)
 
-        backgroundColor = SKColor(white: 0.96, alpha: 1.0)
-        sandTerrainNode?.setSandColor(theme.sandColor)
-        sandTerrainNode?.resetTerrain()
+        // Set rich cartoon background gradient
+        updateBackgroundGradient(topColor: theme.bgTopColor, bottomColor: theme.bgBottomColor)
 
+        // Reset sand terrain with matching theme sand color
+        sandTerrainNode?.reset(sandBottom: 260.0, sandTop: 1750.0, color: theme.sandColor)
+
+        // Play matching world BGM
         AudioManager.shared.playWorldBgm(for: worldId)
 
         let level = levelRepo.getLevel(levelId: levelId)
@@ -95,23 +120,8 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
             )
         }
 
-        // Setup Truck Sensor at bottom
-        let truck = level.truck
-        let truckNode = SKNode()
-        truckNode.name = "truck"
-        truckNode.position = CGPoint(x: truck.x, y: truck.y)
-
-        // Cute truck sprite
-        let truckSprite = SKSpriteNode(color: SKColor(red: 1.0, green: 0.28, blue: 0.34, alpha: 1.0), size: CGSize(width: truck.width, height: truck.height * 0.6))
-        truckNode.addChild(truckSprite)
-
-        // Truck sensor
-        let sensorBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -truck.width/2, y: -truck.height/2, width: truck.width, height: truck.height))
-        sensorBody.categoryBitMask = CollisionCategory.truckBed
-        sensorBody.contactTestBitMask = CollisionCategory.ballColored
-        sensorBody.isDynamic = false
-        truckNode.physicsBody = sensorBody
-        addChild(truckNode)
+        // Setup Cute Toy Truck at bottom
+        setupCuteTruck(truckDef: level.truck)
 
         // Setup Obstacles
         for obs in level.obstacles {
@@ -142,6 +152,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 sensor.categoryBitMask = CollisionCategory.multiplierGate
                 sensor.contactTestBitMask = CollisionCategory.ballColored
                 gateNode.physicsBody = sensor
+                gateNode.zPosition = 5
                 addChild(gateNode)
 
             case "portal_pair":
@@ -159,14 +170,17 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 pBody.categoryBitMask = CollisionCategory.portal
                 pBody.contactTestBitMask = CollisionCategory.ballColored
                 inPortal.physicsBody = pBody
+                inPortal.zPosition = 5
                 addChild(inPortal)
 
                 // Out Portal
                 let outPortal = SKShapeNode(circleOfRadius: 36)
+                outPortal.name = "portal"
                 outPortal.position = CGPoint(x: obs.safeExitX, y: obs.safeExitY)
                 outPortal.fillColor = SKColor(red: 0.88, green: 0.44, blue: 0.33, alpha: 0.9)
                 outPortal.strokeColor = SKColor(red: 0.99, green: 0.80, blue: 0.43, alpha: 1.0)
                 outPortal.lineWidth = 4.0
+                outPortal.zPosition = 5
                 addChild(outPortal)
 
             case "bouncy_bumper":
@@ -183,6 +197,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 body.contactTestBitMask = CollisionCategory.ballColored
                 body.restitution = 1.8
                 bumper.physicsBody = body
+                bumper.zPosition = 5
                 addChild(bumper)
 
             case "tnt_crate":
@@ -208,6 +223,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 body.categoryBitMask = CollisionCategory.tnt
                 body.contactTestBitMask = CollisionCategory.ballColored
                 tnt.physicsBody = body
+                tnt.zPosition = 5
                 addChild(tnt)
 
             default: // static_beam, funnel_bumper, rotating_paddle
@@ -226,6 +242,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 body.categoryBitMask = CollisionCategory.obstacle
                 body.restitution = CGFloat(obs.safeRestitution)
                 obsNode.physicsBody = body
+                obsNode.zPosition = 5
 
                 if obs.type == "rotating_paddle" && obs.safeMotorSpeed != 0 {
                     let dur = Double(360.0 / abs(obs.safeMotorSpeed))
@@ -249,13 +266,93 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 let ball = BallNode(ballId: ballCounter, radius: 13.0, isDormant: isDormant)
                 ballCounter += 1
                 ball.position = CGPoint(x: bx, y: by)
+                ball.zPosition = 10
                 balls.append(ball)
                 addChild(ball)
             }
         }
     }
 
-    // Touch Handling
+    private func setupCuteTruck(truckDef: TruckDef) {
+        let truckNode = SKNode()
+        truckNode.name = "truck"
+        truckNode.position = CGPoint(x: truckDef.x, y: truckDef.y)
+        truckNode.zPosition = 15
+
+        let tw = CGFloat(truckDef.width)
+        let th = CGFloat(truckDef.height)
+
+        // 1. Truck Bed (Red Coral)
+        let bed = SKShapeNode(rectOf: CGSize(width: tw * 0.72, height: th * 0.45), cornerRadius: 8.0)
+        bed.position = CGPoint(x: -tw * 0.12, y: 0)
+        bed.fillColor = SKColor(red: 1.0, green: 0.28, blue: 0.34, alpha: 1.0)
+        bed.strokeColor = .white
+        bed.lineWidth = 2.0
+        truckNode.addChild(bed)
+
+        // 2. Truck Cab (Mint Green with curved roof)
+        let cab = SKShapeNode(rectOf: CGSize(width: tw * 0.28, height: th * 0.55), cornerRadius: 10.0)
+        cab.position = CGPoint(x: tw * 0.36, y: th * 0.05)
+        cab.fillColor = SKColor(red: 0.18, green: 0.84, blue: 0.45, alpha: 1.0)
+        cab.strokeColor = .white
+        cab.lineWidth = 2.0
+        truckNode.addChild(cab)
+
+        // 3. Cheerful Headlight
+        let light = SKShapeNode(circleOfRadius: 6.0)
+        light.position = CGPoint(x: tw * 0.48, y: th * 0.05)
+        light.fillColor = SKColor(red: 0.0, green: 0.82, blue: 0.83, alpha: 1.0)
+        light.strokeColor = .white
+        light.lineWidth = 1.5
+        truckNode.addChild(light)
+
+        // 4. Cute Wheels with Silver Rims
+        let wheelR: CGFloat = 16.0
+        let wheelOffsets: [CGFloat] = [-tw * 0.32, tw * 0.08, tw * 0.36]
+        for ox in wheelOffsets {
+            let tire = SKShapeNode(circleOfRadius: wheelR)
+            tire.position = CGPoint(x: ox, y: -th * 0.25)
+            tire.fillColor = SKColor(red: 0.18, green: 0.21, blue: 0.26, alpha: 1.0)
+            tire.strokeColor = .clear
+            truckNode.addChild(tire)
+
+            let rim = SKShapeNode(circleOfRadius: wheelR * 0.45)
+            rim.position = CGPoint(x: ox, y: -th * 0.25)
+            rim.fillColor = SKColor(red: 0.95, green: 0.95, blue: 0.96, alpha: 1.0)
+            rim.strokeColor = .clear
+            truckNode.addChild(rim)
+        }
+
+        // Sensor body across the entire truck top
+        let sensorBody = SKPhysicsBody(edgeLoopFrom: CGRect(x: -tw/2, y: -th/2, width: tw, height: th))
+        sensorBody.categoryBitMask = CollisionCategory.truckBed
+        sensorBody.contactTestBitMask = CollisionCategory.ballColored
+        sensorBody.isDynamic = false
+        truckNode.physicsBody = sensorBody
+
+        addChild(truckNode)
+    }
+
+    private func updateBackgroundGradient(topColor: Color, bottomColor: Color) {
+        guard let bg = backgroundNode else { return }
+        let colorSpace = CGColorSpaceCreateDeviceRGB()
+        let bitmapInfo = CGImageAlphaInfo.premultipliedLast.rawValue
+        let w = 200
+        let h = 360
+        guard let ctx = CGContext(data: nil, width: w, height: h, bitsPerComponent: 8, bytesPerRow: w * 4, space: colorSpace, bitmapInfo: bitmapInfo) else { return }
+
+        // Draw vertical gradient
+        let colors = [bottomColor.skColor.cgColor, topColor.skColor.cgColor] as CFArray
+        let locs: [CGFloat] = [0.0, 1.0]
+        if let grad = CGGradient(colorsSpace: colorSpace, colors: colors, locations: locs) {
+            ctx.drawLinearGradient(grad, start: CGPoint(x: 0, y: 0), end: CGPoint(x: 0, y: CGFloat(h)), options: [])
+        }
+        if let image = ctx.makeImage() {
+            bg.texture = SKTexture(cgImage: image)
+        }
+    }
+
+    // Touch Handling for Sand Digging
     public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
@@ -272,6 +369,15 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
         guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         carver.touchEnded(at: location)
+    }
+
+    // Physics Step: Resolve Sand Collision so balls only flow where carved!
+    public override func didSimulatePhysics() {
+        super.didSimulatePhysics()
+        guard let terrain = sandTerrainNode else { return }
+        for ball in balls where !ball.isCollected && !ball.isDormant {
+            terrain.resolveBallCollision(ball: ball)
+        }
     }
 
     // Contact Detection
@@ -294,6 +400,14 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                 ball.isCollected = true
                 collectedCount += 1
                 AudioManager.shared.playTruckDrop()
+
+                // Bouncy suspension reaction on truck
+                if let truckNode = childNode(withName: "truck") {
+                    let bounceDown = SKAction.moveBy(x: 0, y: -6.0, duration: 0.05)
+                    let bounceUp = SKAction.moveBy(x: 0, y: 6.0, duration: 0.08)
+                    truckNode.run(SKAction.sequence([bounceDown, bounceUp]))
+                }
+
                 if remainingQuota > 0 {
                     remainingQuota -= 1
                     onQuotaUpdated?(remainingQuota)
@@ -318,6 +432,7 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
                         let clone = BallNode(ballId: ballCounter, radius: 13.0, isDormant: false)
                         ballCounter += 1
                         clone.position = CGPoint(x: ball.position.x + CGFloat(m * 10), y: ball.position.y)
+                        clone.zPosition = 10
                         clone.physicsBody?.velocity = ball.physicsBody?.velocity ?? CGVector.zero
                         balls.append(clone)
                         addChild(clone)
@@ -387,9 +502,11 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
     private func spawnConfetti() {
         for _ in 0..<60 {
             let confetti = SKShapeNode(rectOf: CGSize(width: 8, height: 16))
+            confetti.name = "confetti"
             confetti.fillColor = BallNode.palette.randomElement() ?? .yellow
             confetti.strokeColor = .clear
             confetti.position = CGPoint(x: 500, y: 300)
+            confetti.zPosition = 25
             addChild(confetti)
 
             let dx = CGFloat.random(in: -350...350)
@@ -402,5 +519,15 @@ public class GameScene: SKScene, SKPhysicsContactDelegate {
 
             confetti.run(SKAction.group([seq, rotate]))
         }
+    }
+}
+
+extension Color {
+    var skColor: SKColor {
+        #if canImport(UIKit)
+        return SKColor(self)
+        #else
+        return SKColor.white
+        #endif
     }
 }

@@ -31,4 +31,18 @@ final class PhysicsFoundationTests: XCTestCase {
         XCTAssertEqual(dormantBall.physicsBody?.categoryBitMask, CollisionCategory.ballColored)
         XCTAssertTrue(dormantBall.physicsBody?.isDynamic == true)
     }
+
+    func testSandTerrainGridOccupancyAndCarving() {
+        let grid = SandTerrainGrid(worldWidth: 1000.0, worldHeight: 1800.0, cellSize: 20.0)
+        grid.reset(sandBottom: 260.0, sandTop: 1750.0)
+
+        XCTAssertTrue(grid.isSolidAt(x: 500.0, y: 1000.0), "Sand should be solid before carving")
+        XCTAssertFalse(grid.isSolidAt(x: 500.0, y: 100.0), "Bottom region should be open for truck")
+
+        // Carve trench
+        grid.carveCapsule(from: CGPoint(x: 500.0, y: 1000.0), to: CGPoint(x: 500.0, y: 900.0), radius: 45.0)
+
+        XCTAssertFalse(grid.isSolidAt(x: 500.0, y: 1000.0), "Carved position should be empty")
+        XCTAssertFalse(grid.isSolidAt(x: 500.0, y: 950.0), "Intermediate capsule point should be empty")
+    }
 }
