@@ -1,0 +1,19 @@
+stages:
+  - build
+
+build-ipa:
+  stage: build
+  tags:
+    - saas-macos-medium-m1
+  script:
+    - xcodebuild build -project SandAdventure.xcodeproj -scheme SandAdventure -configuration Release -sdk iphoneos -destination "generic/platform=iOS" -derivedDataPath build/DerivedData CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" AD_HOC_CODE_SIGNING_ALLOWED=YES
+    - mkdir -p build/Payload
+    - cp -R build/DerivedData/Build/Products/Release-iphoneos/SandAdventure.app build/Payload/
+    - cd build && zip -r -q SandAdventure.ipa Payload && cd ..
+  artifacts:
+    name: "SandAdventure-iOS-IPA"
+    paths:
+      - build/SandAdventure.ipa
+    expire_in: 14 days
+  rules:
+    - if: $CI_COMMIT_BRANCH

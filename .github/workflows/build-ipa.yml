@@ -1,0 +1,92 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches: [ main, master, ios ]
+  pull_request:
+    branches: [ main, master, ios ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-ipa:
+    name: Build & Package SandAdventure IPA
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Build App for iOS Device (Unsigned)
+        run: |
+          xcodebuild build \
+            -project SandAdventure.xcodeproj \
+            -scheme SandAdventure \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination "generic/platform=iOS" \
+            -derivedDataPath build/DerivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES > build.log 2>&1 || {
+              echo "=== XCODEBUILD FAILED ==="
+              tail -n 60 build.log
+              ERRORS=$(grep -i "error:" build.log | tr '\n' ' ' | cut -c 1-500)
+              echo "::error::Xcodebuild failure: $ERRORS"
+              exit 1
+            }
+
+      - name: Upload Build Log on Failure
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: xcodebuild-log
+          path: build.log
+
+      - name: Package SandAdventure.ipa
+        run: |
+          mkdir -p build/Payload
+          cp -R build/DerivedData/Build/Products/Release-iphoneos/SandAdventure.app build/Payload/
+          cd build
+          zip -r -q SandAdventure.ipa Payload
+          cd ..
+          ls -lh build/SandAdventure.ipa
+
+      - name: Upload IPA as Workflow Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SandAdventure-iOS-IPA
+          path: build/SandAdventure.ipa
+          retention-days: 14
+
+      - name: Create or Update GitHub Release
+        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master' || github.ref == 'refs/heads/ios'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v1.0.0
+          name: "Sand Adventure iOS v1.0.0 (IPA)"
+          draft: false
+          prerelease: false
+          make_latest: true
+          files: build/SandAdventure.ipa
+          body: |
+            ## 🏖️ Sand Adventure (Sand Balls) - Bản Cài Đặt iOS (IPA)
+            
+            - **100 Màn chơi độc nhất** (10 Thế giới hoạt hình).
+            - **19 Tệp âm thanh CD-Quality** (BGM thiếu nhi + SFX sống động).
+            - **Cơ chế vật lý đào cát 60 FPS**, bóng trôi mượt mà, xe tải nhún lò xo.
+            - **Zero Ads • Zero Tracking • 100% Offline**.
+            
+            ### 📥 Hướng dẫn cài đặt vào iPhone qua máy tính Windows:
+            1. Tải file **`SandAdventure.ipa`** đính kèm ở mục Assets bên dưới về máy tính Windows.
+            2. Cắm iPhone vào máy tính bằng cáp USB, mở khóa màn hình và chọn **"Tin cậy máy tính này"**.
+            3. Mở phần mềm **Sideloadly** trên máy tính (`E:\Sideloadly\sideloadly.exe`).
+            4. Kéo thả file `SandAdventure.ipa` vào giao diện Sideloadly.
+            5. Apple ID của bạn (`howardbach1984@gmail.com`) đã được lưu sẵn trong Sideloadly, chỉ cần bấm **START** để nạp game vào iPhone.
+            6. Trên iPhone: Vào **Cài đặt > Cài đặt chung > Quản lý VPN & Thiết bị**, chọn Apple ID của bạn và chọn **Tin cậy**.
+            7. *(Nếu dùng iOS 16+)*: Bật thêm **Chế độ nhà phát triển (Developer Mode)** trong *Cài đặt > Quyền riêng tư & Bảo mật* rồi khởi động lại máy là có thể chơi được ngay!
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
